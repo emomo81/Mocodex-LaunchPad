@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowDownToLine, ArrowLeft, ArrowRight, BarChart3, Bell, Check, ChevronDown, ChevronRight, CircleHelp, Clock3, Code2, Compass, Download, ExternalLink, Filter, Gamepad2, GraduationCap, Heart, LayoutGrid, Menu, MoreHorizontal, Plus, Search, ShieldCheck, SlidersHorizontal, Sparkles, Star, TrendingUp, UploadCloud, X, Zap } from 'lucide-react';
+import { ArrowDownToLine, ArrowLeft, ArrowRight, BarChart3, Check, ChevronDown, ChevronRight, CircleHelp, Clock3, Code2, Download, Gamepad2, GraduationCap, Heart, LayoutGrid, Menu, MoreHorizontal, Plus, Search, ShieldCheck, SlidersHorizontal, Sparkles, Star, TrendingUp, UploadCloud, X, Zap } from 'lucide-react';
 
 type App = { id:number; name:string; tagline:string; category:string; platform:string[]; rating:number; ratings:number; downloads:string; color:string; icon:string; featured?:boolean; price:string; creator:string; description:string; version:string; size:string; updated:string; tags:string[] };
 const initialApps:App[] = [

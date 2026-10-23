@@ -21,6 +21,15 @@ Open http://localhost:3000. Run `npm run build` to validate production compilati
 
 `supabase/migrations/20261022000000_initial_schema.sql` is a database starting point with RLS enabled and public read policies limited to live catalog data. It is not connected to the UI. Before launch, implement verified admin auth, admin-only publishing policies, privileged moderation with audit records, private R2 uploads and signed downloads, scanner callbacks and approval gates, reviews restricted to verified downloaders, rate limits, legal pages, and operational monitoring. In particular, keep builds and their storage paths inaccessible to public clients.
 
+## Current setup status
+
+| Service | State |
+| --- | --- |
+| Vercel | Project `mocodex-launchpad` created in `emomo81's projects`, linked to `emomo81/Mocodex-LaunchPad`, production branch `main`. First deployment built from `arena/2f78110e-mocodex-launchpad` and is `READY`. |
+| Supabase | Not provisioned. A new project was refused because the org is at its free-project limit (5 projects: `icchr`, `exam-platform` active; `Confidence School Marks`, `stock-management` paused). No env vars are set, so `/api/health` reports `unconfigured` and the storefront stays on demo data. |
+
+To finish Supabase later: free a slot (delete/pause a project, or upgrade the org), create the project, then run the migration and set the two env vars (locally and in Vercel).
+
 ## Supabase
 
 The database lives in Supabase (Postgres 17 + RLS). `supabase/migrations/20261022000000_initial_schema.sql` is the source of truth; the UI still renders demo data, so a missing Supabase configuration never breaks the storefront.
